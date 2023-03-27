@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Friend_Circle_Message</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.css">
+<link href="../style.css" rel="stylesheet" />
+</head>
+<body onload="PR.prettyPrint()">
+<pre class="prettyprint lang-java">
+public class Friend_Circle_Message implements Serializable{
+
+    private int uid; //
+    private String content; //
+    private file imgData; //
+    private String imgUrl; //
+    private String createTime; //
+    private int likeCount; //
+    private String likeCountList; //
+
+    public int getUid(){
+        return uid;
+    }
+
+    public void setUid(int uid){
+        this.uid = uid;
+    }
+
+    public String getContent(){
+        return content;
+    }
+
+    public void setContent(String content){
+        this.content = content;
+    }
+
+    public file getImgData(){
+        return imgData;
+    }
+
+    public void setImgData(file imgData){
+        this.imgData = imgData;
+    }
+
+    public String getImgUrl(){
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl){
+        this.imgUrl = imgUrl;
+    }
+
+    public String getCreateTime(){
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime){
+        this.createTime = createTime;
+    }
+
+    public int getLikeCount(){
+        return likeCount;
+    }
+
+    public void setLikeCount(int likeCount){
+        this.likeCount = likeCount;
+    }
+
+    public String getLikeCountList(){
+        return likeCountList;
+    }
+
+    public void setLikeCountList(String likeCountList){
+        this.likeCountList = likeCountList;
+    }
+
+}
+</pre>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/google-code-prettify@1.0.5/bin/prettify.min.js"></script>
+</body>
+</html>

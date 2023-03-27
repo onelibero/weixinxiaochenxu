@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: 'jdbc:mysql://127.0.0.1:3306/mlform?&serverTimezone=Asia/Shanghai'
+
+  servlet:
+    multipart:
+      max-file-size: 4MB
+
+
+#  thymeleaf:
+#    prefix: /templates/**
+#    suffix: .html
+#    cache: false
+#    resources:
+#      static-locations: classpath:/templates/
+
+server:
+  port: 443
+  ssl:
+    enabled: true  #开启ssl验证
+    key-store: classpath:8071739_letcm.top.pfx  #证书文件位置
+    key-store-type: PKCS12   #storetype 上面的类型
+#    key-alias: tomcat   #tomcat上面的alias  别名
+    key-store-password: HeTSFoST
+
+myconfig:
+  url: https://letcm.top/
+  savelocation: C:\java\project_resources_save
+  savelocation2: C:\java\filepath
+
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"/>
+<head>
+    <title>⽂件上传</title>
+    <link href="/css/bootstrap.css" rel="external nofollow"
+    >
+    <script src="/css/jquery-1.10.2.js"></script>
+</head>
+<body class="container">
+<br/>
+<span id="time"></span>
+<div>最大支持2mb图片</div>
+<div class="row">
+    <input class="btn btn-info btn-xs" type="file" name="file"/><br/>
+    <div class="col-lg-5"
+         style="padding-left: 0; padding-right: 0; margin-bottom: 0px;">
+        <div class="progress progress-striped active" style="display: ">
+            <div id="progressBar" class="progress-bar progress-bar-success"
+                 role="progressbar" aria-valuemin="0" aria-valuenow="0"
+                 aria-valuemax="100" style="width: 20%"></div>
+        </div>
+    </div>
+    <!-- 显⽰上传速度 -->
+    <div id="showInfo" class="col-lg-2">0KB/s</div>
+</div>
+<!-- 显⽰⽂件信息 -->
+<div id="showFieInfo" class="row">
+    <label name="upfileName"></label><br/>
+    <label name="upfileSize"></label><br/>
+    <label name="upfileType"></label><br/>
+</div>
+
+<div class="row">
+    <input class="btn btn-success btn-xs" type="button" name="upload2" value="上传"/>
+    <input class="btn btn-success btn-xs" type="button" name="cancelUpload" value="取消"/>
+</div>
+<div class="row">
+    <form action="/downloadpic" method="post">
+        <input class="btn btn-success btn-xs" type="text" name="num">
+        <input class="btn btn-success btn-xs" type="submit" value="查看"/>
+    </form>
+
+</div>
+</body>
+<script type="text/javascript">
+    var fileBtn = $("input[name=file]");
+    var processBar = $("#progressBar");
+    var uploadBtn = $("input[name=upload]");
+    var canelBtn = $("input[name=cancelUpload]");
+    var ot;//上传开始时间
+    var oloaded;//已上传⽂件⼤⼩
+    fileBtn.change(function () {
+        var fileObj = fileBtn.get(0).files[0]; //js获取⽂件对象
+        if (fileObj) {
+            var fileSize = getSize(fileObj.size);
+            $("label[name=upfileName]").text('⽂件名：' + fileObj.name);
+            $("label[name=upfileSize]").text('⽂件⼤⼩：' + fileSize);
+            $("label[name=upfileType]").text('⽂件类型：' + fileObj.type);
+            uploadBtn.attr('disabled', false);
+        }
+    });
+    // 上传⽂件按钮点击的时候
+    uploadBtn.click(function () {
+        // 进度条归零
+        setProgress(0);
+        // 上传按钮禁⽤
+        $(this).attr('disabled', true);
+        // 进度条显⽰
+        showProgress();
+        // 上传⽂件
+        uploadFile();
+    });
+
+    function uploadFile() {
+        var url = "/upload2";
+        var fileObj = fileBtn.get(0).files[0];
+        if (fileObj == null) {
+            alert("请选择⽂件");
+            return;
+        }
+        // FormData 对象
+        var form = new FormData();
+        form.append('file', fileObj); // ⽂件对象
+        // XMLHttpRequest 对象
+        var xhr = new XMLHttpRequest();
+        //true为异步处理
+        xhr.open('post', url, true);
+        //上传开始执⾏⽅法
+        xhr.onloadstart = function () {
+            console.log('开始上传')
+            ot = new Date().getTime();  //设置上传开始时间
+            oloaded = 0;//已上传的⽂件⼤⼩为0
+
+        };
+
+        xhr.onload=function (){
+            if(this.status == 200||this.status == 304){
+                alert('神秘代码：'+this.responseText);
+            }
+        }
+
+
+        xhr.upload.addEventListener('progress', progressFunction, false);
+        xhr.addEventListener("load", uploadComplete, false);
+        xhr.addEventListener("error", uploadFailed, false);
+        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.send(form);
+
+        function progressFunction(evt) {
+            debugger;
+            if (evt.lengthComputable) {
+                var completePercent = Math.round(evt.loaded / evt.total * 100)
+                    + '%';
+                processBar.width(completePercent);
+                processBar.text(completePercent);
+                var time = $("#time");
+                var nt = new Date().getTime();   //获取当前时间
+                var pertime = (nt - ot) / 1000;    //计算出上次调⽤该⽅法时到现在的时间差，单位为s
+                ot = new Date().getTime();     //重新赋值时间，⽤于下次计算
+                var perload = evt.loaded - oloaded; //计算该分段上传的⽂件⼤⼩，单位b
+                oloaded = evt.loaded;        //重新赋值已上传⽂件⼤⼩
+                //上传速度计算
+                var speed = perload / pertime;//单位b/s
+                var bspeed = speed;
+                var units = 'b/s';//单位名称
+                if (speed / 1024 > 1) {
+                    speed = speed / 1024;
+                    units = 'k/s';
+                }
+                if (speed / 1024 > 1) {
+                    speed = speed / 1024;
+                    units = 'M/s';
+                }
+                speed = speed.toFixed(1);
+                //剩余时间
+                var resttime = ((evt.total - evt.loaded) / bspeed).toFixed(1);
+                $("#showInfo").html(speed + units + '，剩余时间：' + resttime + 's');
+            }
+        }
+
+        //上传成功后回调
+        function uploadComplete(evt) {
+            uploadBtn.attr('disabled', false);
+            console.log('上传完成')
+        };
+
+        //上传失败回调
+        function uploadFailed(evt) {
+            console.log('上传失败' + evt.target.responseText);
+        }
+
+        //终⽌上传
+        function cancelUpload() {
+            xhr.abort();
+        }
+
+        //上传取消后回调
+        function uploadCanceled(evt) {
+            console.log('上传取消,上传被⽤户取消或者浏览器断开连接:' + evt.target.responseText);
+        }
+
+        canelBtn.click(function () {
+            uploadBtn.attr('disabled', false);
+            cancelUpload();
+        })
+    }
+
+    function getSize(size) {
+        var fileSize = '0KB';
+        if (size > 1024 * 1024) {
+            fileSize = (Math.round(size / (1024 * 1024))).toString() + 'MB';
+        } else {
+            fileSize = (Math.round(size / 1024)).toString() + 'KB';
+        }
+        return fileSize;
+    }
+
+    function setProgress(w) {
+        processBar.width(w + '%');
+    }
+
+    function showProgress() {
+        processBar.parent().show();
+    }
+
+    function hideProgress() {
+        processBar.parent().hide();
+    }
+</script>
+</html>

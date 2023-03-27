@@ -1,0 +1,84 @@
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find java src paths:  [D:\intellij idea\save\mlform\src\main\java\]
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: project type not set, try to figure out...
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start find controllers in path : D:\intellij idea\save\mlform\src\main\java\
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : DocumentController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : Friend_CircleController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : HomePageController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : NotificationController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : ReportController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : testcontroller.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: find controller file : UserController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : DocumentController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : DocumentController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : Friend_CircleController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : Friend_CircleController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : HomePageController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : HomePageController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : NotificationController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : NotificationController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : ReportController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : ReportController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : testcontroller.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : testcontroller.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to parse controller file : UserController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to parse controller file : UserController.java
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs start...
+五月 31, 2022 9:21:49 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\DocumentController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\DocumentController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\Friend_CircleController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\Friend_CircleController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\HomePageController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\HomePageController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\NotificationController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\NotificationController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\ReportController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\ReportController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\testcontroller.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\testcontroller.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: start to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\UserController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: success to generate docs for controller file : D:\intellij idea\save\mlform\src\main\java\com\mlform\controller\UserController.java
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index start !!!
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate index done !!!
+五月 31, 2022 9:21:50 下午 io.github.yedaxia.apidocs.LogUtils info
+信息: info: generate api docs done !!!

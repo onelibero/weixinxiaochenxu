@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: 'jdbc:mysql://127.0.0.1:3306/mlform?&serverTimezone=Asia/Shanghai'
+
+  servlet:
+    multipart:
+      max-file-size: 16MB
+
+
+#  thymeleaf:
+#    prefix: /templates/**
+#    suffix: .html
+#    cache: false
+#    resources:
+#      static-locations: classpath:/templates/
+
+server:
+  port: 8081
+
+myconfig:
+  url: http://drivod.vaiwan.com/
+  savelocation: D:\intellij idea\project_resources_save
+
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
