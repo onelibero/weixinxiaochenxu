@@ -1,0 +1,64 @@
+
+<!---
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<block wx:for="{{info}}" wx:key="id">
+<swiper-item>
+<image src="{{item.coverimgurl}}" class="slide-image" bindtap="toxiangqing" data-item="{{item}}"/>
+</swiper-item>
+</block>
+</swiper>
+-->
+<view class="zt">
+
+
+<view class="top">
+<view class="zuo">
+    <view class="hello">欢迎回来!</view>
+    <view class="id">{{nickName}}</view>
+</view>
+
+<image src="{{avatarUrl}}" class="you"></image>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{info}}" wx:key="id">
+                <swiper-item>
+                        <image src="{{item.coverimgurl}}" class="slide-image" bindtap="toxiangqing" data-item="{{item}}"/>
+                </swiper-item>
+        </block>
+</swiper>
+
+    <view class="dongtai_box" wx:for="{{allMessage}}" wx:key="id">
+    <view class="dongtai" bindtap="todetail" data-item="{{item}}" wx:if="{{item!=undefined && item.message.user.permission==1}}">
+   
+             <view class="top_">
+                     <image src="{{item.message.user.profileUrl}}" class="tupian"></image>
+                     <view class="id_">
+                           <text class="mingzi">{{item.message.user.nickname}}</text>
+                       <view class="id_text">{{item.message.create_time}}</view>
+                      </view>
+             </view>
+        
+        <view class="content"> {{item.message.content}}</view>
+             <view  class="img_">
+             <block wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+                <image src="{{imgItem}}" class="img_1"></image>
+             </block>
+           
+             </view>
+            <view class="tu">
+                <image class="tu_" src="/icon/jubao.png" bindtap="jubao" data-item="{{item}}"></image>
+                <image class="tu_" src="/icon/pinglun.png"></image>
+                
+                <image src="/icon/1dianzan.png" class="tu_" wx:if="{{item.message.islike==1}}" bindtap="MessageLiking" data-index="{{index}}"></image>
+      <image src="/icon/dianzan.png" class="tu_" wx:else bindtap="MessageLiking" data-index="{{index}}"></image>
+                <image class="tu_" src="/icon/shoucang.png"></image>
+            </view>
+    </view>
+    
+</view>
+
+</view>
+<view class="bomTxt">
+    <view hidden="{{!loading}}">正在加载...</view>
+    <view hidden="{{!loaded}}">已加载全部</view>
+</view>

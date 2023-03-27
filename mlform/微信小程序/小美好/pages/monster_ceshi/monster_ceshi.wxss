@@ -1,0 +1,144 @@
+.swiper {
+    height: 400rpx;
+    width: 80%;
+  }
+  swiper-item {
+    height: 80%;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .slide-image{
+     height: 100%;
+    width: 85%;
+    border-radius: 10%;
+  }
+  .top{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 40rpx;
+  }
+  .zuo{
+      margin-top: 50rpx;
+      display:flex;
+      flex-direction: column;
+      width: 400rpx;
+      margin-left: 80rpx;
+  }
+  .you{
+      width: 120rpx;
+      height: 120rpx;
+      margin-top: 30rpx;
+     margin-left: 100rpx;
+     border-radius: 50%;
+  overflow:hidden;
+  }
+  .hello{
+    font-size: 30rpx;
+    color: rgb(167, 167, 167);
+  }
+  .id{
+      margin-top: 10rpx;
+      font-weight: 1000;
+  }
+  .dongtai_box{
+    margin-top: 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    background-color: rgb(241, 241, 241);
+}
+  .dongtai{
+    
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    border-radius: 30rpx;
+ margin-bottom: 20rpx;
+}
+.tupian{
+    width: 100rpx;
+    height: 100rpx;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    border-radius: 50%;
+    overflow:hidden;
+}
+.id_{
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    font-weight: 1000;
+    font-size: 30rpx;
+    
+}
+.img_{
+    display: flex;
+    flex-direction: row;
+}
+.id_text{
+    width: 450rpx;
+    overflow:hidden;
+    color: rgb(114, 114, 114);
+  /*不换行*/
+
+  white-space:nowrap;
+
+  /*添加...*/
+
+  text-overflow:ellipsis;
+    margin-top: 10rpx;
+    font-weight: 500;
+}
+.time{
+   position: absolute;
+   font-weight: 700;
+    margin-left: 390rpx;
+    font-size: 30rpx;
+}
+.zt{
+    background-color: rgb(241, 241, 241);
+    height: 100%;
+}
+.top_{
+    display: flex;
+    flex-direction: row;
+}
+.content{
+    margin-left: 40rpx;
+    font-size: 35rpx;
+    font-weight: 800;
+    width: 550rpx;
+  white-space:wrap;
+}
+.img_1{
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 10%;
+    overflow:hidden;
+}
+.tu{
+    display:flex;
+    flex-direction: row;
+}
+.tu_{
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 60rpx;
+}
+.mingzi{
+    font-size: 35rpx;
+    font-weight: 600;
+}
+.bomTxt {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: rgb(126, 138, 155);
+    padding: 0rpx 0rpx 20rpx 0rpx;
+    background-color: rgb(241, 241, 241);
+}

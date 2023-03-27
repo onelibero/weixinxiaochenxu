@@ -1,0 +1,86 @@
+/**index.wxss**/
+/* pages/productReleased/productReleased.wxss */
+ 
+page {
+    background-color: #f1f1f1;
+  }
+   
+  /**/
+  
+   /**/
+  .sureRelease {
+    color: rgb(53, 158, 255);
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 10rpx;
+    right: 30rpx;
+    font-weight: 1000;
+  }
+   
+  
+/**/
+  .tu {  
+    border: 3rpx solid rgba(0, 0, 0, 0.329); 
+     border-radius: 10rpx;  
+     height: 60rpx;  width: 60rpx;  
+     margin: 40rpx 20rpx 20rpx 30rpx;  
+     padding: 60rpx 60rpx 60rpx 60rpx;
+     position: relative;
+     }
+    .logoinfo { 
+     height: 220rpx; 
+      width: 220rpx; 
+       margin: 10rpx 10rpx 10rpx 10rpx;
+       }
+       /**/
+    .tu1 {  
+    display: flex;  
+    flex-flow: row wrap;  
+    align-content: space-around;
+    }
+    .fabiao{
+        width: 95%;
+        margin-top: 30rpx;
+        margin-left: 20rpx;
+        background-color: ivory;
+        border-radius: 10%;
+    }
+    .zt{
+        display: flex;
+        flex-direction: column;
+    }
+    .zong{
+        margin-top: 50rpx;
+        display: flex;
+        flex-direction: row;
+    }
+    .img{
+        margin-left: 30rpx;
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .tiezi{
+        margin-top: 100rpx;
+        margin-left: 30rpx;
+        font-weight:700;
+    }
+    .id{
+        font-weight: 1000;
+    }
+    .zt1{
+        margin-left: 20rpx;
+        display: flex;
+        flex-direction: column;
+    }
+    .id1{
+        color: rgb(114, 114, 114);
+        font-size: 30rpx;
+        margin-top: 10rpx;
+    }
+    .neirong{
+        margin-top: 30rpx;
+        margin-left: 30rpx;
+        font-weight:700;
+    }

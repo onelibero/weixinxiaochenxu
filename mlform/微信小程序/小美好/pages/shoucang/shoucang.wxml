@@ -1,0 +1,117 @@
+
+<view class="camera_1" >
+    <view class="camera_4">
+        <image src="/icon/sousuo.png" class="sousuo"></image>
+    </view>
+        
+ <input class="sou_text" placeholder="搜索感兴趣的内容" bindblur="todetailcopy" ></input>
+       <view class="sou_">
+       
+       </view>
+        
+    <view class="camera_2">
+        <image src="/icon/camera.png" class="camera_3" bindtap="toissue"></image>
+    </view>
+  
+</view>
+<view wx:if="{{allMessage.length==0}}" class="zanwu">暂无收藏</view>
+<block wx:for="{{allMessage}}" wx:key="id">
+
+ 
+<view class="zt">
+  <view class="tx">
+<image class="img" src="{{item.message.user.profileUrl}}"></image>
+  </view>
+  
+  <view class="nr" >
+  <view bindtap="todetail" data-item="{{item}}">
+    <view class="id">{{item.message.user.nickname}}</view>
+  <view class="neirong"> {{item.message.content}}
+  </view>
+  </view>
+
+
+
+
+
+  
+  <view class="imgs_">
+    <block wx:if="{{item.message.imgurl.length==1}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_1"></image>
+    </block>
+   
+    <block wx:if="{{item.message.imgurl.length==2}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_4"></image>
+    </block>
+   
+    <block wx:if="{{item.message.imgurl.length>2}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_5"></image>
+    </block>
+  </view>
+
+
+<!--时间及删除-->
+  <view class="time-d">
+   <view class="time">{{item.message.create_time}}</view>
+   <view class="d" bindtap="deleteMessage" data-message_id="{{item.message}}">删除</view>
+   <view class="d" bindtap="deleteMessage" wx:if="{{nickName==item.message.user.nickname}}" data-message_id="{{item.message}}">删除</view>
+  </view >
+
+<!--点赞举报评论--->
+  <view class="hud-font"> 
+    <view class="hud" bindtap="jubao" data-item="{{item}}">
+      <image src="/icon/jubao.png" class="hud-img" ></image>
+      <view >举报</view>
+  </view>
+  <view class="hud" >
+      <image src="/icon/pinglun.png" class="hud-img" bindtap="todetail" data-item="{{item}}"></image>
+      <view >评论</view>
+  </view>
+  
+  <view class="hud" bindtap="MessageLiking" data-message_id="{{item.message}}">
+      <image src="/icon/1dianzan.png" class="hud-img" wx:if="{{item.message.like_count>=1}}"></image>
+      <image src="/icon/dianzan.png" class="hud-img" wx:else></image>
+      <view >点赞</view>
+  </view>
+  <view class="hud" >
+      
+      <image src="/icon/1shoucang.png" class="hud-img" bindtap="deleteshoucang" data-item="{{item}}" ></image>
+      <view >收藏</view>
+  </view>
+  </view>
+
+
+<!--喜欢信息-->
+  <view class="like_box">
+  <image src="/icon/猪.jpg" class="like_img"></image>
+  <block wx:for="{{item.message.like_count_list_user}}" wx:key="index" wx:for-item="liker">
+  <view>{{liker.nickname}} </view>
+  
+  </block>
+  <view>等{{item.message.like_count}}人觉得很赞</view>
+  </view>
+
+<!--评论信息-->
+<block wx:for="{{item.comments}}" wx:key="index" wx:for-item="comt">
+    <view class="say_box">
+        <view class="say" wx:if="{{comt.review_to!=null}}">
+            <text class="say_text">{{comt.review.nickname}}</text>
+            <text>回复</text>
+            <text class="say_text">{{comt.review_to.nickname}}</text>
+            <text >{{comt.content}}</text>
+        </view>
+  <view class="say" wx:else>
+        <text class="say_text">{{comt.review.nickname}}:</text>
+        <text>{{comt.content}}</text>
+  </view>
+  
+</view>
+</block>
+
+
+  </view>
+</view>
+</block>
+
+
+   

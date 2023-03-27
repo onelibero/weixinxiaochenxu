@@ -1,0 +1,31 @@
+<view class="">
+
+
+<view class="touxiang_box">
+    <image src="{{avatarUrl}}" class="touxiang" ></image>
+</view>
+<view class="id_box">
+    <text>{{nickName}}</text>
+</view>
+<view>{{openid}}</view>
+<view class="form">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+        
+       
+        <radio-group name="gender" >
+            性别：
+            <label>
+                <radio value="男" />
+                男
+            </label>
+            <label >
+                <radio value="女" />
+                女
+            </label>
+        </radio-group>
+        <button type="primary" formType="submit">确认信息</button>
+    </form>
+</view>
+
+</view>
+

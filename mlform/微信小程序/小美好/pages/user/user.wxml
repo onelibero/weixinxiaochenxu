@@ -1,0 +1,99 @@
+
+
+ <!----
+<view class="touxiang_box">
+
+    <image src="{{avatarUrl}}" class="touxiang" ></image>
+    
+    
+   
+    <image src="{{avatarUrl}}" class="touxiang"></image>
+    <text class="id" bindtap="ShowInput" wx:if="{{nickName!=false}}">{{nickName}}</text>
+    <text class="id1" bindtap="ShowInput" wx:else>点击修改名称</text>
+</view>
+
+<view class="meth">
+    <view class="zuo" bindtap="todongtai">
+        <text class="z">动态</text>
+    </view>
+    <view class="shu" wx:if="{{shuliang>0}}">
+        <text>{{shuliang}}</text>
+    </view>
+    <view class="zuo1" bindtap="toxiaoxi">
+       <view class="z">消息</view>
+    </view>
+</view>
+<view class="meth">
+   
+    <view class="meth2" bindtap="toshoucang">
+        <text class="z">收藏</text>
+    </view>
+</view>
+<view wx:if="{{permission==1}}" bindtap="tomonster">管理者</view>
+
+<view class="input-section" wx:if="{{isShowInput}}" > 
+<view  class="paiban">
+    <input class='input_input'  focus="auto" placeholder="请输入新昵称" bindinput="getvalue"  maxlength="8"/>
+             <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+    <button class="send_button" size="mini" bindtap="publish" wx:if="{{txt==false}}">取消</button>
+    <button class="send_button" size="mini" bindtap="publish" wx:else >确定</button>
+            </view>
+</view>
+     
+    </view>
+--->
+<view class="zt">
+
+
+<view class="touxiang_box">
+    <image src="{{avatarUrl}}" class="touxiang"></image>
+</view>
+<view class="touxiang_box">
+    <view class="nickname" bindtap="ShowInput" wx:if="{{nickName!=false}}">{{nickName}}</view>
+    <view class="nickname" bindtap="ShowInput" wx:else>点击修改名称</view>
+</view>
+<view class="box">
+    <view class="box_1" bindtap="toxiaoxi">
+        <view wx:if="{{shuliang!=0}}">{{shuliang}}</view>
+        <view wx:else>0</view>
+        <view class="text">消息</view>
+    </view>
+    <view class="box_1" bindtap="toshoucang">
+         <view>{{shoucang}}</view>
+        <view class="text">收藏</view>
+    </view>
+    <view class="box_1" bindtap="todongtai">
+        <view>{{fabiao}}</view>
+        <view class="text">发表</view>
+    </view>
+</view>
+<view class="box">
+    <view class="iii">动态</view>
+    <view class="ii" bindtap="toindex">see all</view>
+</view>
+<view class="dongtai_box" wx:for="{{allMessage}}" wx:key="id">
+    <view class="dongtai" bindtap="todetail" data-item="{{item}}">
+        <image src="{{item.message.user.profileUrl}}" class="tupian"></image>
+        <view class="id">
+         <view class="box">
+            <text>{{item.message.user.nickname}}</text>
+            <view class="time">{{item.message.create_time}}</view>
+         </view>
+           
+            <view class="id_text">{{item.message.content}}</view>
+        </view>
+    </view>
+</view>
+
+</view>
+<view class="input-section" wx:if="{{isShowInput}}" > 
+<view  class="paiban">
+    <input class='input_input'  focus="auto" placeholder="请输入新昵称" bindinput="getvalue"  maxlength="8"/>
+             <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+    <button class="send_button" size="mini" bindtap="publish" wx:if="{{txt==false}}">取消</button>
+    <button class="send_button" size="mini" bindtap="publish" wx:else >确定</button>
+            </view>
+</view>
+     
+    </view>
+

@@ -1,0 +1,129 @@
+.zt{
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx  20rpx 40rpx 20rpx;
+  }
+  /*头像大小*/
+  .img{
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .tx{
+    margin-right: 15rpx;
+  }
+  .nr{
+    width: 70%;
+  }
+  /*用户名称*/
+  .id{
+    color: rgb(219, 64, 64);
+    font-weight: 550;
+    font-size: 40rpx;
+    margin-bottom: 15rpx;
+  }
+  /*时间*/
+  .time-d{
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+    margin: 10rpx 0rpx 10rpx 0rpx;
+  }
+  .time{
+    color: rgb(154, 160, 165);
+    margin-right: 20rpx;
+  }
+  .d{
+    color: rgb(103, 29, 223);
+  }
+  /*分享转发点赞*/
+  .hud-img{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 10rpx;
+  }
+  .hud{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+  .hud-font{
+    display: flex;
+    flex-direction: row;
+   font-size: 35rpx;
+   justify-content: space-between;
+   margin: 10rpx 0rpx 10rpx 0rpx;
+  }
+  /*动态图片*/
+  .imgs_{
+    margin-top: 10rpx;
+  }
+  .imgs_1{
+    width: 500rpx;
+    height: 250rpx;
+  }
+  .imgs_4{
+    width: 240rpx;
+    height: 240rpx;
+    margin-right: 10rpx;
+  }
+  .imgs_5{
+    width: 155rpx;
+    height: 150rpx;
+    margin-right: 10rpx;
+  }
+  /*点赞*/
+  .like_box{
+    background-color: aliceblue;
+    margin-top: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20rpx;
+    color: rgb(113, 191, 228);
+    font-size: 30rpx;
+    border-bottom: 1rpx solid  rgb(138, 162, 173);
+  }
+  .like_img{
+    width: 30rpx;
+    height: 20rpx;
+    margin-right: 10rpx;
+  }
+  /*评论*/
+  .say_box{
+    background-color: aliceblue;
+    padding: 20rpx 20rpx;
+    font-size: 30rpx;
+  }
+  .say{
+    margin-bottom: 10rpx;
+  }
+  .say_text{
+    color: rgb(103, 179, 230);
+  }
+  /*照相机*/
+  .camera_1{
+      display: flex;
+      flex-direction: row;
+    
+  }
+  .camera_4{
+      margin-left: 200rpx;
+  }
+  .camera_2{
+      margin-left:100rpx ;
+  }
+  .camera_3{
+      width: 65rpx;
+      height: 55rpx;
+  }
+  .sousuo{
+      width: 35rpx;
+      height: 35rpx;
+      margin-top:10rpx;
+  }
+  .sou_text{
+      
+      width: 60%;
+  }

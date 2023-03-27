@@ -1,0 +1,67 @@
+<!-----
+<block wx:for="{{allMessage}}" wx:key="id" >
+<view wx:if="{{item!=false}}">
+    <view  bindtap="todetail" data-item="{{item}}" >
+             <view class="tx">
+                        <image class="img" src="{{item.notification.reviewer_user.profileUrl}}"></image>
+                        <view class="nr" >
+                              <view class="id">{{item.notification.reviewer_user.nickname}}</view>
+                            <view class="time">{{item.notification.time}}</view>
+                    </view>
+            </view>
+            <view class="dd" wx:if="{{item.notification.type==0}}">
+                <image src="/icon/dianzan.png" class="dianzan"></image><text>点赞了我的作品</text>
+            </view>
+            <view class="dd" wx:if="{{item.notification.type==1}}">
+                <image src="/icon/pinglun.png" class="dianzan"></image><text>:{{item.notification.content}}</text>
+            </view>
+           
+    <view class="dd">
+    <image src="{{item.imgurl[0]}}" class="imgs"></image>
+   <view class="mingzi">{{item.nickname}}:</view>
+   <view class="neirong">{{item.content}}</view>
+    </view>
+</view>
+</view>
+
+</block>
+<view class="bomTxt">
+    <view hidden="{{!loading}}">正在加载...</view>
+    <view hidden="{{!loaded}}">已加载全部</view>
+</view>
+-->
+<view class="zt" wx:for="{{allMessage}}" wx:key="id">
+    <view  bindtap="todetail" data-item="{{item}}" class="zt1" wx:if="{{id==0}}">
+             <view class="tx">
+                        <image class="img" src="{{item.notification.reviewer_user.profileUrl}}"></image>
+                        <view class="nr" >
+                              <view class="id">{{item.notification.reviewer_user.nickname}}</view>
+                            <view class="time">{{item.notification.time}}</view>
+                    </view>
+            </view>
+          
+                
+                <view class="dd" wx:if="{{item.notification.type==0}}">
+                    <image src="/icon/dianzan.png" class="dianzan"></image>
+                <text class="dianzan1">点赞了我的作品</text>
+            </view>
+            <view class="dd" wx:if="{{item.notification.type==1}}">
+                <image src="/icon/pinglun.png" class="dianzan"></image>
+                <text class="dianzan1">:{{item.notification.content}}</text>
+            </view>
+          
+            
+    <view class="dd1">
+    <image src="{{item.imgurl[0]}}" class="imgs"></image>
+   <view class="mingzi">{{item.nickname}}:</view>
+   <view class="neirong">{{item.content}}</view>
+    </view>
+</view>
+        <view wx:else="" class="zanwu">
+            暂无消息
+        </view>
+</view>
+<view class="bomTxt">
+    <view hidden="{{!loading}}">正在加载...</view>
+    <view hidden="{{!loaded}}">已加载全部</view>
+</view>

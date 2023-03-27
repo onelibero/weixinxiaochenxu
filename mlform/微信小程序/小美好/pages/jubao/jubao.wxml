@@ -1,0 +1,37 @@
+
+<!--pages/productReleased/productReleased.wxml-->
+<!--文章发布-->
+
+
+
+   
+  <!--文章标题-->
+  
+  <!--文章内容-->
+  <view class="zt">
+    <view>
+        <view bindtap="publish" class='sureRelease'>确定</view>
+       </view>
+  
+  <view class="tiezi">举报</view>
+  <view class="zong">
+             <view>
+                 <image src="{{avatarUrl}}" class="img"></image>
+             </view>
+    <view class="zt1">
+             <view class="id">{{nickName}}</view>
+            <view class="id1" wx:if="{{permission==0}}">用户</view>
+            <view class="id1" wx:else>管理者</view>
+    </view>
+  </view>
+  <view class="neirong">
+  举报内容
+  </view>
+    <view class="fabiao">
+      
+      <textarea bindinput="getvalue"   placeholder="请输入......." maxlength="800"></textarea>
+    </view>
+  
+  
+    </view>
+

@@ -1,0 +1,17 @@
+.title{
+    font-size: 100rpx;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgb(31, 11, 11);
+    font-weight: 1000;
+}
+.create_time{
+    color: rgb(179, 165, 165);
+    font-size: 30rpx;
+    margin-left: 550rpx;
+}
+.box{
+    right: 0rpx;
+    color: rgb(255, 0, 0);
+}

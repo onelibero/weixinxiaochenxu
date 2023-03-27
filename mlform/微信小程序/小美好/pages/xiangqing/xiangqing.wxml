@@ -1,0 +1,14 @@
+<view class="box">
+    <view wx:if="{{permission==1}}" bindtap="deleteinfo" >删除</view>
+</view>
+
+<view class="title">
+    <text >{{title}}</text>
+</view>
+<view class="create_time">
+<text>{{create_time}}</text>
+</view>
+
+<view>
+    <rich-text nodes="{{content}}"> </rich-text>
+</view>

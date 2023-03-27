@@ -1,0 +1,67 @@
+
+<view class="zt">
+
+
+<view class="touxiang_box">
+    <image src="{{avatarUrl}}" class="touxiang"></image>
+</view>
+<view class="touxiang_box">
+    <view class="nickname" bindtap="ShowInput" wx:if="{{nickName!=false}}">{{nickName}}</view>
+    <view class="nickname" bindtap="ShowInput" wx:else>点击修改名称</view>
+</view>
+<view class="box">
+    <view class="box_1" bindtap="toxiaoxi">
+        <view wx:if="{{shuliang!=0}}">{{shuliang}}</view>
+        <view wx:else>0</view>
+        <view class="text">消息</view>
+    </view>
+    <view class="box_1" bindtap="toshoucang">
+         <view>{{shoucang}}</view>
+        <view class="text">收藏</view>
+    </view>
+    <view class="box_1" bindtap="todongtai">
+        <view>{{fabiao}}</view>
+        <view class="text">发表</view>
+    </view>
+</view>
+<view class="box">
+    <view class="box_2" bindtap="tofabu">
+        <view class="text">发布首页</view>
+    </view>
+    <view class="box_2" bindtap="tomonster_ceshi">
+        <view class="text">查看首页</view>
+    </view>
+    <view class="box_2" bindtap="tomonster_jubao">
+        <view class="text">查看举报</view>
+    </view>
+</view>
+<view class="box">
+    <view class="iii">动态</view>
+    <view class="ii" bindtap="tomonster_index">see all</view>
+</view>
+<view class="dongtai_box" wx:for="{{allMessage}}" wx:key="id">
+    <view class="dongtai" bindtap="todetail" data-item="{{item}}">
+        <image src="{{item.message.user.profileUrl}}" class="tupian"></image>
+        <view class="id">
+         <view class="box">
+            <text>{{item.message.user.nickname}}</text>
+            <view class="time">{{item.message.create_time}}</view>
+         </view>
+           
+            <view class="id_text">{{item.message.content}}</view>
+        </view>
+    </view>
+</view>
+
+</view>
+<view class="input-section" wx:if="{{isShowInput}}" > 
+<view  class="paiban">
+    <input class='input_input'  focus="auto" placeholder="请输入新昵称" bindinput="getvalue"  maxlength="8"/>
+             <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+    <button class="send_button" size="mini" bindtap="publish" wx:if="{{txt==false}}">取消</button>
+    <button class="send_button" size="mini" bindtap="publish" wx:else >确定</button>
+            </view>
+</view>
+     
+    </view>
+

@@ -1,0 +1,59 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/monster_jubao/monster_jubao",
+        "pages/11/11",
+        "pages/ceshi/ceshi",
+        "pages/user/user",
+        "pages/xiangqing/xiangqing",
+        "pages/index/index",
+        "pages/jubao/jubao",
+        "pages/moster_11/moster_11",
+        "pages/monster/monster",
+        "pages/xiaoxi/xiaoxi",
+        "pages/yinanjieda/yinanjieda",
+        "pages/detail/detail",
+     
+        "pages/first/first",
+        "pages/dongtai/dongtai",
+        "pages/shoucang/shoucang",
+        "pages/pert/pert",
+        "pages/favorites/favorites",
+        "pages/xiaoxidetail/xiaoxidetail",
+        "pages/monster_index/monster_index",
+        "pages/monster_detail/monster_detail",
+        "pages/monster_ceshi/monster_ceshi",
+        "pages/delete/delete"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/ceshi/ceshi",
+                "text": "主页",
+                "iconPath": "icon/主页.png",
+                "selectedIconPath": "icon/1主页.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "探索",
+                "iconPath": "icon/朋友圈.png",
+                "selectedIconPath": "icon/1朋友圈.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "个人中心",
+                "iconPath": "icon/用户.png",
+                "selectedIconPath": "/icon/1用户.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

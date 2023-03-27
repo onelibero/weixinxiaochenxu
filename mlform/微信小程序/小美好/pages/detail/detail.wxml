@@ -1,0 +1,103 @@
+<view class="zt">
+  <view class="tx">
+<image class="img" src="{{message.user.profileUrl}}" ></image>
+  </view>
+  
+  <view class="nr">
+  <view class="id" >{{message.user.nickname}}</view>
+  <view class="neirong"> {{message.content}} </view>
+ 
+<!----------
+  <view class="imgs_">
+<image src="/icon/猪.jpg" class="imgs_4"></image>
+<image src="/icon/猪.jpg" class="imgs_4"></image>
+<image src="/icon/猪.jpg" class="imgs_4"></image>
+<image src="/icon/猪.jpg" class="imgs_4"></image>
+  </view>
+  ------>
+  <view class="imgs_">
+    <block wx:if="{{message.imgurl.length==1 && message.imgurl!=false}}" wx:for="{{message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_1" data-index="{{index}}" bindtap="previewImg"></image>
+    </block>
+   
+    <block wx:if="{{message.imgurl.length==2}}" wx:for="{{message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_4" data-index="{{index}}" bindtap="previewImg"></image>
+    </block>
+   
+    <block wx:if="{{message.imgurl.length>2}}" wx:for="{{message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_5" data-index="{{index}}" bindtap="previewImg"></image>
+    </block>
+  </view>
+  <view class="time-d">
+   <view class="time">{{message.create_time}}</view>
+   <view class="d" bindtap="deleteMessage" wx:if="{{openid==message.uid}}" data-message_id="{{message}}">删除</view>
+  </view>
+  <view class="hud-font"> 
+    <view class="hud" bindtap="jubao" data-item="{{message}}">
+      <image src="/icon/jubao.png" class="hud-img" ></image>
+      <view >举报</view>
+  </view>
+  <view class="hud">
+      <image src="/icon/pinglun.png" class="hud-img"></image>
+      <view >评论</view>
+  </view>
+  <view class="hud" bindtap="MessageLiking" data-message="{{message}}">
+      <image src="/icon/1dianzan.png" class="hud-img" wx:if="{{message.islike==1}}"></image>
+      <image src="/icon/dianzan.png" class="hud-img" wx:else></image>
+      <view >点赞</view>
+  </view>
+  <view class="hud" bindtap="shoucang" data-message="{{message}}">
+    <image src="/icon/shoucang.png" class="hud-img" ></image>
+      <view >收藏</view>
+  </view>
+  
+       </view>
+    </view>
+  </view>
+  
+   <view class="like_">
+   <view>
+   <image src="/icon/dianzan.png" class="picture_1"></image>
+   </view>
+   <view class="like_1" wx:for="{{message.like_count_list_user}}" wx:key="index" wx:for-item="liker">
+    <image src="{{liker.profileUrl}}" class="picture_2"></image>
+    
+   </view>
+    </view>
+
+    <view class="say_">
+        <view class="say_left">
+             <image src="/icon/pinglun.png" class="say_img_1"></image>
+        </view>
+        <view class="say_right" wx:for="{{comments}}" wx:key="index">
+          
+          <view class="say_1" bindtap="tocomment" data-item="{{item}}">
+            <image src="{{item.review.profileUrl}}" class="say_img_2"></image>
+                <view class="say_text" bindlongpress="deleteReply" data-item="{{item}}">
+                    <view class="say_time">
+                        <view class="say_time_1">{{item.review.nickname}}</view>
+                        <view class="say_time_2">{{item.create_time}}</view>
+                    </view>
+                    <view>
+                    <view class="say_text_1" wx:if="{{item.review_to._openid!=item.review._openid}}">
+                    回复<text class="say_time_1">{{item.review_to.nickname}}:</text>
+                    <view bindlongpress="deleteReply" data-item="{{item}}">
+                        {{item.content}}
+                    </view>
+                   </view>
+                    <view class="say_text_1"  wx:else>{{item.content}}</view>
+                    </view>
+                </view>
+          </view>
+        </view>
+
+
+    </view>
+    <view style="height: 200rpx;"></view>
+    <view class="reply">
+        <view class="reply_left">
+            <input class="reply_1" placeholder="{{placeholder}}" bindinput="getvalue" bindblur="xiaoshi" value="{{reply_content}}"></input>
+        </view>
+        <view class="reply_button" bindtap="publish">发送</view>
+    </view>
+

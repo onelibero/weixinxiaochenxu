@@ -1,0 +1,15 @@
+
+.anniu{
+    margin-top: 200rpx;
+    background-color: rgb(163, 163, 161);
+    color: rgb(255, 255, 255);
+}
+.xin{
+    display: flex;
+    flex-direction: column;
+    font-size: 100rpx;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-weight: 1000;
+}

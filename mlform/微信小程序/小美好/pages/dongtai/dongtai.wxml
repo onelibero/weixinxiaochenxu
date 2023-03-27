@@ -1,0 +1,133 @@
+<view class="camera_1" >
+    <view class="camera_4">
+        <image src="/icon/sousuo.png" class="sousuo"></image>
+    </view>
+        
+ <input class="sou_text" placeholder="搜索感兴趣的内容" bindblur="todetailcopy" ></input>
+       <view class="sou_">
+       
+       </view>
+        
+    <view class="camera_2">
+        <image src="/icon/camera.png" class="camera_3" bindtap="toissue"></image>
+    </view>
+
+</view>
+
+<block wx:for="{{allMessage}}" wx:key="id">
+
+ 
+<view class="zt">
+  <view class="tx">
+<image class="img" src="{{item.message.user.profileUrl}}"></image>
+  </view>
+  
+  <view class="nr" >
+  <view bindtap="todetail" data-item="{{item}}">
+    <view class="id">{{item.message.user.nickname}}</view>
+  <view class="neirong"> {{item.message.content}}
+  </view>
+  </view>
+
+
+
+
+
+  
+  <view class="imgs_" bindtap="todetail" data-item="{{item}}"> 
+    <block wx:if="{{item.message.imgurl.length==1 && item.message.imgurl!=false}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_1"></image>
+  
+    </block>
+   
+    <block wx:if="{{item.message.imgurl.length==2}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_4"></image>
+    </block>
+   
+    <block wx:if="{{item.message.imgurl.length>2}}" wx:for="{{item.message.imgurl}}" wx:key="index" wx:for-item="imgItem">
+  <image src="{{imgItem}}" class="imgs_5"></image>
+    </block>
+  </view>
+
+
+<!--时间及删除-->
+  <view class="time-d">
+   <view class="time">{{item.message.create_time}}</view>
+   <view class="d" bindtap="deleteMessage" wx:if="{{openid==item.message.uid}}" data-message_id="{{item.message}}">删除</view>
+  </view >
+
+<!--点赞举报评论--->
+  <view class="hud-font" wx:if="{{item!=undefined}}"> 
+    <view class="hud" bindtap="jubao" data-item="{{item}}">
+      <image src="/icon/jubao.png" class="hud-img" ></image>
+      <view>举报</view>
+  </view>
+  <view class="hud" >
+      <image src="/icon/pinglun.png" class="hud-img"  bindtap="ShowInput" data-item="{{item}}"></image>
+      <view >评论</view>
+      
+  </view>
+  
+  <view class="hud" bindtap="MessageLiking" data-index="{{index}}">
+      <image src="/icon/1dianzan.png" class="hud-img" wx:if="{{item.message.islike==1}}"></image>
+      <image src="/icon/dianzan.png" class="hud-img" wx:else></image>
+      <view >点赞</view>
+  </view>
+  <view class="hud" >
+      <image src="/icon/shoucang.png" class="hud-img" bindtap="shoucang" data-item="{{item}}" ></image>
+     
+      <view >收藏</view>
+  </view>
+  </view>
+
+
+<!--喜欢信息-->
+  <view class="like_box" wx:if="{{item!=undefined}}">
+  
+  <block wx:for="{{item.message.like_count_list_user}}" wx:key="index" wx:for-item="liker">
+
+  <view>{{liker.nickname}}</view>
+  <view wx:if="{{item.message.like_count>1}}">,</view>
+  
+  </block>
+  <view>等{{item.message.like_count}}人觉得很赞</view>
+  </view>
+
+<!--评论信息-->
+<block wx:for="{{item.comments}}" wx:key="index" wx:for-item="comt">
+    <view class="say_box" bindtap="tocomment" data-item="{{item}}">
+        <view class="say" wx:if="{{comt.review_to._openid != comt.review._openid}}" bindlongpress="deleteSay" data-item="{{comt}}">
+            <text class="say_text">{{comt.review.nickname}}</text>
+            <text>回复</text>
+            <text class="say_text">{{comt.review_to.nickname}}:</text>
+            <text bindlongpress="deleteSay" data-item="{{comt}}">{{comt.content}}</text>
+        </view>
+  <view class="say" bindlongpress="deleteSay" data-item="{{comt}}" wx:else>
+        <text class="say_text">{{comt.review.nickname}}:</text>
+        <text  >{{comt.content}}</text>
+  </view>
+  
+</view>
+</block>
+
+
+  </view>
+</view>
+    
+</block>
+<view class="input-section" wx:if="{{isShowInput}}">
+                <view  class="paiban">
+    <input class='input_input'  focus="auto" placeholder="请输入" bindinput="getvalue"  />
+             <view style="height:110rpx;width:170rpx;display:flex; align-items: center;justify-content: center;">
+    <button class="send_button" size="mini" bindtap="publish" wx:if="{{reply_content==false}}">取消</button>
+    <button class="send_button" size="mini" bindtap="publish" wx:else>确定</button>
+            </view>
+                    </view>
+     
+    </view>
+<view class="bomTxt">
+    <view hidden="{{!loading}}">正在加载...</view>
+    <view hidden="{{!loaded}}">已加载全部</view>
+</view>
+
+   

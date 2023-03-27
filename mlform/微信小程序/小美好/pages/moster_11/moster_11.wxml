@@ -1,0 +1,26 @@
+
+
+<view class="fengmian">
+    <view class="guding2" bindtap="upimg" wx:if="{{tu == 1}}">上传封面</view>
+       <image  wx:if="{{tu!=1}}"  src="{{tu}}" class="tu"></image>
+       <view class="guding2_1" bindtap="upimg" wx:if="{{tu != 1}}">更改封面</view>
+</view>
+<view class="fabiao">
+    <view class="guding1" bindtap="publish">发表</view>
+</view>
+<view class="fabiao">
+    <view class="guding" bindtap="insertImage">+</view>
+</view>
+<view class="title">
+    <input type="text" class="ziti" placeholder="请输入标题" bindinput="gettitle"/>
+</view>
+<view class="container" class="hei">
+  <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady"
+  bindinput="getvalue">
+  </editor> 
+</view>
+
+<view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px">
+  <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+  
+</view>

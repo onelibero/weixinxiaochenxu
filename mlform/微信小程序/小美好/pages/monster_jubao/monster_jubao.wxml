@@ -1,0 +1,24 @@
+<view class="zt" wx:for="{{allMessage}}" wx:key="id">
+    <view  data-item="{{item}}" class="zt1" wx:if="{{id!=0}}">
+   
+            <view class="dd"  bindtap="todetail">
+                <text class="dianzan1">举报内容:{{item.report.content}}</text>
+            </view>
+    <view class="dd1"  bindtap="todetail">
+    <image src="{{item.imgurl[0]}}" class="imgs"></image>
+   <view class="mingzi">{{item.nickname}}:</view>
+   <view class="neirong">{{item.content}}</view>
+    </view>
+    <view class="dele">
+        <view class="delete" bindtap="deletedongtai" data-item="{{item}}">删除该动态</view>
+        <view class="delete" bindtap="deletejubao" data-item="{{item}}">删除该举报</view>
+    </view>
+</view>
+        <view wx:else="" class="zanwu">
+            暂无消息
+        </view>
+</view>
+<view class="bomTxt">
+    <view hidden="{{!loading}}">正在加载...</view>
+    <view hidden="{{!loaded}}">已加载全部</view>
+</view>
